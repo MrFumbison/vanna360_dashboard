@@ -1,0 +1,33 @@
+
+<div class="wrapper">
+  <div class="container main">
+      <div class="row">
+          <div class="col-md-6 side-logo">  
+             
+          </div>
+          <div class="col-md-6 right">
+              
+              <div class="input-box">
+                 
+                 <header>login</header>
+                 <form (ngSubmit)="onSubmit()">
+                  <div class="form-group">
+                    <label for="username">username</label> 
+                      <input type="text" class="form-control" id="username" required="" autocomplete="off" [(ngModel)]="username" name="username">
+                  </div> 
+                  <div class="form-group">
+                    <label for="password">Password</label>
+                      <input type="password" class="form-control" id="password" required="" [(ngModel)]="password" name="password">
+                  </div> 
+                 <div class="input-field">
+                  <div class="alert alert-danger" *ngIf="loginError">
+                    Incorrect username or password. Please try again.
+                  </div>
+                      <input type="submit" class="submit" value="click here to login">
+                 </div> 
+                </form>
+              </div>  
+          </div>
+      </div>
+  </div>
+</div>

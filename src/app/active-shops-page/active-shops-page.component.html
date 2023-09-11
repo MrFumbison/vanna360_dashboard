@@ -1,0 +1,71 @@
+<div class="order">
+    <div class="head">
+      <h3>active shops</h3>
+      <app-search (searchtextchanged)="onsearchtextentered($event)"></app-search>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>shop name</th>
+          <th>physical address</th>
+          <th>phone number</th>
+          <th>shop address</th>
+          <th>registration date</th>
+          <th>action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of items">
+        <tr *ngIf="searchtext === '' || item.shop_name.toLowerCase().includes(searchtext)">
+          <td>
+            <img src="https://secure.gravatar.com/avatar/d09eaad01aea86c51b4f892b4f8abf6f?s=100&d=wavatar&r=g">
+            <p>{{item.shop_name}}</p>
+          </td>
+          <td>{{item.physical_address}}</td>
+          <td>{{item.phone_number}}</td>
+          <td><a>{{item.shop_address}}</a></td>
+          <td>{{item.registration_date}}</td>
+          <td><button class="btn btn-warning" (click)="openModal()">{{item.action}}</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- the modal -->
+<div class="model">
+  <div class="modal" id="myModal">
+  <div class="modal-dialog">
+            <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">modal heading</h4>
+          <button class="btn-close" type="button" (click)="closeModal()" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          modal body...
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" (click)="closeModal()" type="button" data-bs-dismiss="modal">close</button>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- the modal -->
+<div class="model">
+  <div class="modal" id="myModal">
+  <div class="modal-dialog">
+            <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">modal heading</h4>
+          <button class="btn-close" type="button" (click)="closeModal()" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          modal body...
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" (click)="closeModal()" type="button" data-bs-dismiss="modal">close</button>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
